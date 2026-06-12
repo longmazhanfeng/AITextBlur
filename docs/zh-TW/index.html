@@ -17,25 +17,27 @@
             text-align: right;
             margin-bottom: 20px;
         }
-        .lang-btn {
-            display: inline-block;
-            padding: 6px 12px;
-            margin-left: 6px;
+        .lang-select {
+            padding: 8px 40px 8px 12px;
             border: 1px solid #dadce0;
             border-radius: 4px;
             background: white;
             cursor: pointer;
             font-size: 14px;
-            transition: all 0.2s;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%235f6368' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 8px center;
+            background-size: 16px;
+            min-width: 120px;
         }
-        .lang-btn:hover {
-            background: #f1f3f4;
+        .lang-select:hover {
             border-color: #1a73e8;
         }
-        .lang-btn.active {
-            background: #1a73e8;
-            color: white;
+        .lang-select:focus {
+            outline: none;
             border-color: #1a73e8;
+            box-shadow: 0 0 0 2px rgba(26, 115, 232, 0.2);
         }
         h1 {
             color: #1a73e8;
@@ -59,12 +61,14 @@
 </head>
 <body>
     <div class="lang-switcher">
-        <button class="lang-btn" onclick="location.href='../index.html'">English</button>
-        <button class="lang-btn" onclick="location.href='../zh/index.html'">中文</button>
-        <button class="lang-btn active" onclick="location.href='./index.html'">繁體中文</button>
-        <button class="lang-btn" onclick="location.href='../ja/index.html'">日本語</button>
-        <button class="lang-btn" onclick="location.href='../ko/index.html'">한국어</button>
-        <button class="lang-btn" onclick="location.href='../la/index.html'">Latina</button>
+        <select class="lang-select" onchange="location.href=this.value">
+            <option value="../index.html">English</option>
+            <option value="../zh/index.html">中文</option>
+            <option value="./index.html" selected>繁體中文</option>
+            <option value="../ja/index.html">日本語</option>
+            <option value="../ko/index.html">한국어</option>
+            <option value="../la/index.html">Latina</option>
+        </select>
     </div>
 
     <h1>AITextBlur 隱私政策</h1>
